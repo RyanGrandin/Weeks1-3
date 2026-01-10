@@ -9,7 +9,7 @@ public class FirstScript : MonoBehaviour
     void Start()
     {
         //speed = Random.Range(0.01f, 0.3f);
-        transform.position = (Vector2)transform.position + Random.insideUnitCircle * 2;
+        //transform.position = (Vector2)transform.position + Random.insideUnitCircle * 2;
     }
 
     // Update is called once per frame
