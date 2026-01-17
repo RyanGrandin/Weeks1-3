@@ -7,7 +7,8 @@ public class Controls : MonoBehaviour
     public bool rightMousePressed = false;
     public bool anyKeyPressed = false;
 
-    public float speed = 3;
+    public float moveSpeed = 3;
+    public float rotateSpeed = 100;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -37,30 +38,26 @@ public class Controls : MonoBehaviour
         //test for left arrow key: move left
         if (Keyboard.current.leftArrowKey.isPressed)
         {
-            Vector2 newPosition = transform.position;
-            newPosition.x -= speed * Time.deltaTime;
-            transform.position = newPosition;
+            Vector3 newRotation = transform.eulerAngles;
+            newRotation.z += rotateSpeed * Time.deltaTime;
+            transform.eulerAngles = newRotation;
         }
         //test for right arrow key: move right
         if (Keyboard.current.rightArrowKey.isPressed)
         {
-            Vector2 newPosition = transform.position;
-            newPosition.x += speed * Time.deltaTime;
-            transform.position = newPosition;
+            Vector3 newRotation = transform.eulerAngles;
+            newRotation.z -= rotateSpeed * Time.deltaTime;
+            transform.eulerAngles = newRotation;
         }
         //test for up arrow key: move up
         if (Keyboard.current.upArrowKey.isPressed)
         {
-            Vector2 newPosition = transform.position;
-            newPosition.y += speed * Time.deltaTime;
-            transform.position = newPosition;
+            transform.position += transform.up * moveSpeed * Time.deltaTime;
         }
         //test for down arrow key: move down
         if (Keyboard.current.downArrowKey.isPressed)
         {
-            Vector2 newPosition = transform.position;
-            newPosition.y -= speed * Time.deltaTime;
-            transform.position = newPosition;
+            transform.position -= transform.up * moveSpeed * Time.deltaTime;
         }
     }
 }
