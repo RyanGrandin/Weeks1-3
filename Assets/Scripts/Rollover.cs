@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class Rollover : MonoBehaviour
 {
     public bool mouseIsOverMe = false;
+    public RotateMe rotateMe;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -24,12 +25,14 @@ public class Rollover : MonoBehaviour
         if (distance < 1)
         {
             mouseIsOverMe = true;
+            rotateMe.speed = 100;
         }
 
         // otherwise, set mouseIsOverMe to false
         else
         {
             mouseIsOverMe = false;
+            rotateMe.speed = 0;
         }
     }
 }
