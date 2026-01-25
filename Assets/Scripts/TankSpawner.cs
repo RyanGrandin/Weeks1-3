@@ -16,7 +16,9 @@ public class TankSpawner : MonoBehaviour
     {
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
-            Instantiate(tankPrefab);
+            // Instantiate(tankPrefab, transform.position, transform.rotation);
+            Vector2 spawnPos = Random.insideUnitCircle * 3;
+            Instantiate(tankPrefab, spawnPos, Quaternion.identity);
         }
     }
 }
