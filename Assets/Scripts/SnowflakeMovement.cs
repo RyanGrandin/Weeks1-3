@@ -16,7 +16,7 @@ public class SnowflakeMovement : MonoBehaviour
         startScreenPos.Set(Random.Range(0, Screen.width), Screen.height);
         endScreenPos.Set(Random.Range(0, Screen.width), 0);
         startWorldPos = Camera.main.ScreenToWorldPoint(startScreenPos);
-        endWorldPos = Camera.main.ScreenToWorldPoint(startScreenPos);
+        endWorldPos = Camera.main.ScreenToWorldPoint(endScreenPos);
     }
 
     // Update is called once per frame
