@@ -219,6 +219,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db0589d0f525cb44998aa99527f9903a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startPos: {x: 0, y: 5}
+  endPos: {x: 0, y: -5}
+  t: 0
 --- !u!1 &342847556
 GameObject:
   m_ObjectHideFlags: 0
