@@ -19,7 +19,7 @@ public class SnowflakeMovement : MonoBehaviour
         endWorldPos = Camera.main.ScreenToWorldPoint(endScreenPos);
 
         // give snowflake a random speed
-        speed = Random.Range(0.2f, 0.6f);
+        speed = Random.Range(0.2f, 0.5f);
     }
 
     // Update is called once per frame
@@ -37,7 +37,7 @@ public class SnowflakeMovement : MonoBehaviour
             startWorldPos = Camera.main.ScreenToWorldPoint(startScreenPos);
             endWorldPos = Camera.main.ScreenToWorldPoint(endScreenPos);
             // give snowflake a random speed
-            speed = Random.Range(0.2f, 0.6f);
+            speed = Random.Range(0.2f, 0.5f);
         }
     }
 }
