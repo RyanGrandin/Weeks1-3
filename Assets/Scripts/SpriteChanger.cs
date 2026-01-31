@@ -12,6 +12,7 @@ public class SpriteChanger : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         //PickARandomColour();
         PickARandomSprite();
     }
