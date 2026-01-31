@@ -4,6 +4,7 @@ public class FirstScript : MonoBehaviour
 {
 
     public float speed = 0.01f;
+    public SpriteRenderer body;
 
     Vector2 bottomLeft;
     Vector2 topRight;

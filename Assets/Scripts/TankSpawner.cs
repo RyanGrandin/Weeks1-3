@@ -31,6 +31,7 @@ public class TankSpawner : MonoBehaviour
             tankCount++;
 
             tankScript.speed = tankCount;
+            tankScript.body.color = Random.ColorHSV();
         }
     }
 }
