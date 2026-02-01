@@ -262,6 +262,7 @@ MonoBehaviour:
   tankSR: {fileID: 0}
   tanks: []
   barrel: {fileID: 1143923087}
+  duckPrefab: {fileID: 3695582880474101332, guid: 253d75385d1751145b7f4f56662d5fbb, type: 3}
 --- !u!1 &1143923084
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,8 @@ public class TankSpawner : MonoBehaviour
 
     public List<GameObject> tanks;
     public Transform barrel;
+
+    public GameObject duckPrefab;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -47,16 +49,30 @@ public class TankSpawner : MonoBehaviour
                 FirstScript ts = tanks[i].GetComponent<FirstScript>();
                 ts.speed = tankCount;
             }
+
+            Instantiate(duckPrefab, Random.insideUnitCircle * 3, Quaternion.identity);
         }
+        if (Mouse.current.rightButton.wasPressedThisFrame)
+        {
+            tanks.Remove(spawnedTank);
+            Destroy(spawnedTank);
+        }
+
         // loop through tanks
         // get transform
         // compare position to barrel
-        for (int i = 0; i < tanks.Count; i++)
+        for (int i = tanks.Count - 1; i >= 0; i--)
         {
             float distance = Vector2.Distance(tanks[i].transform.position, barrel.position);
             if (distance < 0.5f)
             {
                 Debug.Log("Explode tank " + i);
+                //make local variable to get ref to tank
+                GameObject tank = tanks[i];
+                // remove tank from list
+                tanks.Remove(tank);
+                // destroy tank
+                Destroy(tank);
             }
         }
     }
