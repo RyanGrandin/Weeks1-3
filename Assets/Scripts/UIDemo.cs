@@ -9,17 +9,22 @@ public class UIDemo : MonoBehaviour
     public Image duckImage;
     public int clickCount = 0;
     public TextMeshProUGUI score;
+    public Slider slider;
+    public TextMeshProUGUI sliderDisplay;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         SR = GetComponent<SpriteRenderer>();
         score.text = clickCount.ToString();
+
+        slider.wholeNumbers = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        sliderDisplay.text = slider.value.ToString();
         if (Keyboard.current.anyKey.wasPressedThisFrame)
         {
             ChangeColour();
