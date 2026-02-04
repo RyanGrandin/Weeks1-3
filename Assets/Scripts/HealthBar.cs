@@ -7,6 +7,9 @@ public class HealthBar : MonoBehaviour
     public Slider healthBar;
     public SpriteRenderer player;
     public int health = 100;
+    public AudioSource audioSource;
+    public AudioClip attackSFX;
+    public AudioClip deathSFX;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,13 +28,18 @@ public class HealthBar : MonoBehaviour
         {
             // yes: -1 health
             health -= 10;
-                if (health <= 0)
+            if (health <= 0)
             {
+                audioSource.clip = deathSFX;
+                audioSource.Play();
                 gameObject.SetActive(false);
             }
-            ;
+            else
+            {
+                audioSource.clip = attackSFX;
+                audioSource.Play();
+            }
         }
-        ;
 
         // update health bar with new health value
         healthBar.value = health;
