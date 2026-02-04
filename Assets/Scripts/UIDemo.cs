@@ -19,6 +19,7 @@ public class UIDemo : MonoBehaviour
         score.text = clickCount.ToString();
 
         slider.wholeNumbers = true;
+        slider.value = 3;
     }
 
     // Update is called once per frame
