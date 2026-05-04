@@ -29,12 +29,12 @@ void Start()
         distance = Vector2.Distance(worldRightSide, transform.position);
 
         Vector2 newScale = transform.localScale;
-        newScale.x = distance / 5;
-        newScale.y = distance / 5;
+        newScale.x = distance / 5 * 2;
+        newScale.y = distance / 5 * 2;
         transform.localScale = newScale;
 
         Vector2 newNewPos = transform.position;
-        newNewPos.y = distance / 5 - 6;
+        newNewPos.y = distance / 5 - 5;
         transform.position = newNewPos;
     }
 }
